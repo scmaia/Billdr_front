@@ -1,9 +1,21 @@
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import List from './pages/List';
+import Description from './pages/Description';
+import NotFound from './components/NotFound';
+import Header from './components/Header';
 
 function App() {
   return (
-    <div className="App">
-
+    <div className="App bg-slate-50 min-h-screen">
+    <BrowserRouter>
+      <Header/>
+      <Routes>
+        <Route path="/" element={<List/>} />
+        <Route path='/user/:id' element={<Description/>} />
+        <Route path='/*' element={<NotFound/>} />
+      </Routes>
+    </BrowserRouter>
     </div>
   );
 }
