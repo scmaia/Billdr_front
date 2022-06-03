@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { getUsers } from "../utils/apiUtils";
-import UserCard from "./UserCard";
-import Loading from "./Loading";
+import UserCard from "../components/UserCard";
+import Loading from "../components/Loading";
+
+// To do: Add virtualization for performant
+// large lists https://github.com/bvaughn/react-window
 
 function UsersList() {
   const [users, setUsers] = useState([]);
@@ -23,8 +26,8 @@ function UsersList() {
     getUsers(onAPIResponse, onAPIError);
   }, []);
 
-  if(loading) {
-    return <Loading/>
+  if (loading) {
+    return <Loading />;
   }
 
   return (
@@ -45,6 +48,6 @@ function UsersList() {
       </ul>
     </section>
   );
-};
+}
 
 export default UsersList;

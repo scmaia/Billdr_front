@@ -3,3 +3,8 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
+
+// Jest Fetch Mock allows us to easily mock our fetch calls 
+// and return the response we need to fake the HTTP requests.
+// Ref: https://github.com/jefflau/jest-fetch-mock
+require('jest-fetch-mock').enableMocks();

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { locationIcon, dotIcon, phoneIcon } from "./utils/SVGIcons"
+import { locationIcon, dotIcon, phoneIcon } from "./icons/SVGIcons";
 
 function UserCard({ id, username, city, name, phone, website, company }) {
   return (
@@ -9,7 +9,9 @@ function UserCard({ id, username, city, name, phone, website, company }) {
       <div className="flex h-8 flex-row relative">
         {/*  Username */}
         <Link to={`/user/${id}`}>
-          <h2 className="text-lg font-semibold group-hover:underline">{username}</h2>
+          <h2 className="text-lg font-semibold group-hover:underline">
+            {username}
+          </h2>
         </Link>
         {/*  location */}
         <div className="absolute top-0 right-0 flex items-center space-x-1">
@@ -49,11 +51,11 @@ function UserCard({ id, username, city, name, phone, website, company }) {
         </dl>
         {/*  Action */}
         <div className="transition ease-in-out absolute bottom-0 right-0 underline text-white opacity-0 group-hover:block group-hover:opacity-100">
-          <Link to={`/user/${id}`}>See more &rarr;</Link>
+          <Link to={`/user/${id}`}>View details &rarr;</Link>
         </div>
       </div>
     </li>
   );
-};
+}
 
 export default UserCard;

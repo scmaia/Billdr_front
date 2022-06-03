@@ -1,11 +1,12 @@
-import UsersList from "../components/UsersList";
+import Layout from "../components/Layout";
+import UsersList from "../containers/UsersList";
 
 function List() {
-    return (
-      <main>
-        <UsersList/>
-      </main>
-    );
-};
+  return (
+    <Layout>
+      <UsersList />
+    </Layout>
+  );
+}
 
 export default List;
